@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<script src="jquery-1.9.0.js"></script>
+	<script src="js/dialog.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/dialog.css">
+</head>
+<body align="center">
+	<a href="javascript:void(0);" id="a">点击弹出</a>
+	<br>
+    <a href="javascript:void(0);" id="a1">alert</a>
+	<br>
+    <a href="javascript:void(0);" id="a2">confirm</a>
+	<br>
+	<a href="javascript:void(0);" id="b">显示正在加载</a>
+	<br>
+	<a href="javascript:void(0);" id="c">移除正在加载</a>
+
+
+
+
+
+	<script type="text/javascript">
+	//弹出信息
+	$(function(){
+		$("#a").click(function(){
+			Dialog("弹出框的内容","确定", afun);
+		});
+		$("#a1").click(function () {
+		    pop_alert("标题", "弹出框的内容", "确定");
+		});
+		$("#a2").click(function () {
+		    pop_confirm("积分兑换礼品", "本次兑换需要5分", "确定兑换", afun);
+		});
+	});
+	function afun(){
+		alert("点击了确定");
+	}
+
+	//显示加载
+	$(function(){
+		$("#b").click(function(){
+			LoadDialog();
+		});
+	});
+
+	//移除加载
+	$(function(){
+		$("#c").click(function(){
+			RemoveLoadDialog();
+		});
+	});
+	</script>
+</body>
+</html>
